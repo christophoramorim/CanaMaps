@@ -195,7 +195,7 @@ def broquinha() -> pd.DataFrame:
     return dfFinal
 
 def aplicacao() -> pd.DataFrame:
-    resposta = fazerRequisicao(URL_APLICACAO)
+    resposta = fazerRequisicao("https://aprovale.com.br/api/externo/consulta/formularios-aplicacoes")
     if resposta and 'result' in resposta and resposta['result']:
         dfTemp = pd.DataFrame(resposta['result'])
         dfTemp = dfTemp.drop(columns=['proprietario_codigo', 'observacao', 'data_sincronizacao', 'data_criacao'], axis=1)
