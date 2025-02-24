@@ -4,7 +4,7 @@ import os
 # Carregar variaveis de ambiente do arquivo .env
 load_dotenv()
 
-# API_TOKEN=os.getenv('API_TOKEN')
+API_TOKEN=os.getenv('API_TOKEN')
 # URL_FAZENDA=os.getenv('URL_FAZENDA')
 # URL_TALHAO=os.getenv('URL_TALHAO')
 # URL_ARMADILHA=os.getenv('URL_ARMADILHA')

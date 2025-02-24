@@ -4,7 +4,7 @@ from config import API_TOKEN
 def fazerRequisicao(endPoint: str):
 
     headers = {
-        'X-ApiToken': '$2y$10$HELXifyUP8qwr5NbVLF6.OyZun7GyQaq22Np/bodOYp3iKVvTCVia',
+        'X-ApiToken': API_TOKEN,
         'Content-Type': 'application/json'
     }
     
