@@ -1,0 +1,9 @@
+streamlit
+pandas
+geopandas
+folium
+streamlit
+streamlit_folium
+dotenv
+requests
+openpyxl
