@@ -24,7 +24,7 @@ def gerarDatas(inicio: str, fim: str):
 def obterArmadilha() -> pd.DataFrame:
 
     try:
-        url = f"{URL_ARMADILHA}?created_inicial={'23-01-01T00:01'}" #&created_final={data_fim}
+        url = f"{"https://aprovale.com.br/api/externo/consulta/formularios-armadilhas"}?created_inicial={'23-01-01T00:01'}" #&created_final={data_fim}
         resposta = fazerRequisicao(url)
         if resposta and 'result' in resposta and resposta['result']:
             #Normaliza a resposta em JSON transformando em um dataFrame
@@ -73,7 +73,7 @@ def obterArmadilha() -> pd.DataFrame:
 def obterBrocaMaior() -> pd.DataFrame:
 
     try:
-        url = f"{URL_BROCA_MAIOR}?created_inicial={'23-01-01T00:01'}" #&created_final={data_fim}
+        url = f"{"https://aprovale.com.br/api/externo/consulta/formularios-brocas"}?created_inicial={'23-01-01T00:01'}" #&created_final={data_fim}
         resposta = fazerRequisicao(url)
         if resposta and 'result' in resposta and resposta['result']:
             #Normaliza a resposta em JSON transformando em um dataFrame
@@ -128,7 +128,7 @@ def obterBrocaMaior() -> pd.DataFrame:
 def obterBrocaBainha() -> pd.DataFrame:
     
     try:
-        url = f'{URL_BROCA_BAINHA}?created_inicial={'23-01-01T00:01'}' # &created_final={data_fim}
+        url = f'{"https://aprovale.com.br/api/externo/consulta/formularios-brocas-bainhas"}?created_inicial={'23-01-01T00:01'}' # &created_final={data_fim}
         resposta = fazerRequisicao(url)
         if resposta and 'result' in resposta and resposta['result']:
             #Normaliza a resposta em JSON transformando em um dataFrame

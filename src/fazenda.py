@@ -4,7 +4,7 @@ import pandas as pd
 
 def carregarPropriedade() -> pd.DataFrame:
     
-    dfPropriedade = pd.DataFrame(fazerRequisicao(URL_FAZENDA)['result'])
+    dfPropriedade = pd.DataFrame(fazerRequisicao("https://aprovale.com.br/api/externo/consulta/propriedades")['result'])
     dfPropriedade['id_fornecedor'] = dfPropriedade['proprietarios'].apply(lambda x: x[0]['id'] if x else None)
     dfPropriedade['fornecedor'] = dfPropriedade['proprietarios'].apply(lambda x: x[0]['nome'] if x else None)
     dfPropriedade['usina'] = dfPropriedade['usinas'].apply(lambda x: x[0]['nome'] if x else None)
@@ -17,7 +17,7 @@ def carregarPropriedade() -> pd.DataFrame:
 
 def carregarSafra() -> pd.DataFrame:
 
-    dfSafra = pd.DataFrame(fazerRequisicao(URL_SAFRA)['result'])
+    dfSafra = pd.DataFrame(fazerRequisicao("https://aprovale.com.br/api/externo/consulta/safras")['result'])
     dfSafra = dfSafra[['id', 'nome']].astype('int64')
     dfSafra.columns = ['ID_SAFRA', 'SAFRA']
 
@@ -25,7 +25,7 @@ def carregarSafra() -> pd.DataFrame:
 
 def carregarEtapa() -> pd.DataFrame:
 
-    dfEtapa = pd.DataFrame(fazerRequisicao(URL_ETAPA)['result'])
+    dfEtapa = pd.DataFrame(fazerRequisicao("https://aprovale.com.br/api/externo/consulta/propriedades-producoes-etapas")['result'])
     dfEtapa = dfEtapa.drop(['propriedade_id', 'propriedade_producao_id', 'created', 'modified'], axis=1)
     #convertendo as colunas para o tipo correto
     dfEtapa['data_finalizado'] = pd.to_datetime(dfEtapa['data_finalizado'], errors="coerce")
@@ -39,7 +39,7 @@ def carregarEtapa() -> pd.DataFrame:
 
 def carregarTalhao() -> pd.DataFrame:
 
-    dfTalhao = pd.DataFrame(fazerRequisicao(URL_TALHAO)['result'])
+    dfTalhao = pd.DataFrame(fazerRequisicao("https://aprovale.com.br/api/externo/consulta/propriedades-talhoes")['result'])
     dfTalhao = dfTalhao[dfTalhao['safra_id'] >= 6]
     dfTalhao['id_variedade'] = dfTalhao['variedades'].apply(lambda x: x[0]['id'] if x else None) # Pegando o campo de nome variedade
     dfTalhao['variedade'] = dfTalhao['variedades'].apply(lambda x: x[0]['nome'] if x else None)
