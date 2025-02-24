@@ -6,6 +6,13 @@
 
 O **Cana Maps** é um sistema desenvolvido para monitorar pragas, como broquinhas e cigarrinhas, em áreas de cultivo de cana-de-açúcar. Utilizando dados de levantamentos da **APROVALE** (Associação dos Produtores de Cana do Vale do Rio Grande), o projeto visa mapear a distribuição das pragas, identificar áreas de maior incidência e fornecer informações detalhadas aos gestores através de mapas interativos. 
 
+## 🌐 Acesse o Projeto Online  
+[Cana Maps - Monitoramento Geoespacial de Pragas](https://canamaps.streamlit.app/)
+
+## 📸 Imagens do Projeto
+![Mapa Interativo](data/img_projeto_1.png)
+
+
 ## 🚀 Funcionalidades
 - Mapeamento geoespacial das pragas em áreas de cultivo.
 - Identificação de áreas críticas de incidência.
@@ -45,9 +52,6 @@ Os dados utilizados no projeto são obtidos da **APROVALE**, incluindo informaç
 **Christophor Paiva Amorim**
 - [LinkedIn](https://www.linkedin.com/in/christophor-amorim-0503a1144/)
 - [Instagram](https://www.instagram.com/christophoramorim/)
-
-## 📸 Imagens do Projeto
-![Mapa Interativo](data/img_projeto_1.png)
 
 
 Dê uma estrela ⭐ no repositório se você gostou do projeto!
